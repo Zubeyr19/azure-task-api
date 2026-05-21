@@ -1,0 +1,8 @@
+bin/
+obj/
+*.user
+*.db
+appsettings.Production.json
+.env
+publish/
+TestResults/

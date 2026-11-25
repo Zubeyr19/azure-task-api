@@ -22,7 +22,7 @@ public class TasksControllerTests
     }
 
     private static TaskItem MakeTask(int id = 1, string title = "Test task") =>
-        new() { Id = id, Title = title, Status = TaskStatus.Todo, CreatedAt = DateTime.UtcNow };
+        new() { Id = id, Title = title, Status = TaskItemStatus.Todo, CreatedAt = DateTime.UtcNow };
 
     [Fact]
     public async Task GetAll_Returns200WithList()

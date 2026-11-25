@@ -29,7 +29,7 @@ public class TaskServiceTests : IDisposable
         var task = await _service.CreateAsync(request);
         Assert.True(task.Id > 0);
         Assert.Equal("Write tests", task.Title);
-        Assert.Equal(TaskStatus.Todo, task.Status);
+        Assert.Equal(TaskItemStatus.Todo, task.Status);
     }
 
     [Fact]
@@ -71,9 +71,9 @@ public class TaskServiceTests : IDisposable
     public async Task UpdateAsync_ChangesStatus()
     {
         var task = await _service.CreateAsync(new CreateTaskRequest { Title = "Pending task" });
-        var updated = await _service.UpdateAsync(task.Id, new UpdateTaskRequest { Status = TaskStatus.Done });
+        var updated = await _service.UpdateAsync(task.Id, new UpdateTaskRequest { Status = TaskItemStatus.Done });
         Assert.NotNull(updated);
-        Assert.Equal(TaskStatus.Done, updated.Status);
+        Assert.Equal(TaskItemStatus.Done, updated.Status);
     }
 
     [Fact]

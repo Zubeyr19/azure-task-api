@@ -20,5 +20,5 @@ public class UpdateTaskRequest
     [MaxLength(2000)]
     public string? Description { get; set; }
 
-    public TaskStatus? Status { get; set; }
+    public TaskItemStatus? Status { get; set; }
 }
